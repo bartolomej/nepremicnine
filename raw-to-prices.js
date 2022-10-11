@@ -19,6 +19,7 @@ const prices = rawPrices.map(raw => parseInt(raw.split(",")[0].replace(/\./g, ""
 const sum = prices.reduce((sum, current) => sum + current, 0);
 const mean = sum / prices.length;
 
+console.log(rawPrices)
 console.log("MEAN:", mean);
 
-fs.writeFileSync(path.join(__dirname, "out.json"), JSON.stringify(prices, null, 4))
+fs.writeFileSync(path.join(__dirname, "prices.json"), JSON.stringify(prices, null, 4))
